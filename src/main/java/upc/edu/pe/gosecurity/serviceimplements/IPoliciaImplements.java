@@ -7,8 +7,9 @@ import upc.edu.pe.gosecurity.repositories.PoliciaRepository;
 import upc.edu.pe.gosecurity.serviceinterfaces.IPoliciaService;
 
 import java.util.List;
+
 @Service
-public class IPoliciaImplements extends IPoliciaService {
+public class IPoliciaImplements implements IPoliciaService {
 
     @Autowired
     private PoliciaRepository pR;

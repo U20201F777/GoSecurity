@@ -14,7 +14,7 @@ public class IComisariaImplements implements IComisariaService {
     private ComisariaRepository cR;
     @Override
     public void insert(Comisaria comisaria) {
-        cR.save(comisaria)
+        cR.save(comisaria);
     }
 
     @Override
