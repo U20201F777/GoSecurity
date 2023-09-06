@@ -18,16 +18,20 @@ public class Ubicacion {
     private int Longitud;
     @Column(name = "Fecha", nullable = false)
     private Date Fecha;
+    @OneToOne
+    @JoinColumn(name = "idEstadoUbicacion")
+    private EstadoUbicacion estadoUbicacion;
 
 
     public Ubicacion() {
     }
 
-    public Ubicacion(int idUbicacion, int latitud, int longitud, Date fecha) {
+    public Ubicacion(int idUbicacion, int latitud, int longitud, Date fecha, EstadoUbicacion estadoUbicacion) {
         this.idUbicacion = idUbicacion;
         Latitud = latitud;
         Longitud = longitud;
         Fecha = fecha;
+        this.estadoUbicacion = estadoUbicacion;
     }
 
     public int getIdUbicacion() {
@@ -60,5 +64,13 @@ public class Ubicacion {
 
     public void setFecha(Date fecha) {
         Fecha = fecha;
+    }
+
+    public EstadoUbicacion getEstadoUbicacion() {
+        return estadoUbicacion;
+    }
+
+    public void setEstadoUbicacion(EstadoUbicacion estadoUbicacion) {
+        this.estadoUbicacion = estadoUbicacion;
     }
 }
