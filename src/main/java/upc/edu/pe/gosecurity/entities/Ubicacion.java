@@ -19,6 +19,7 @@ public class Ubicacion {
     @Column(name = "Fecha", nullable = false)
     private Date Fecha;
 
+
     public Ubicacion() {
     }
 

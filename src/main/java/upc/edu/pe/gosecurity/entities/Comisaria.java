@@ -16,15 +16,19 @@ public class Comisaria {
     private String Telefono;
     @Column(name = "Direccion", length = 50, nullable = false)
     private String Direccion;
+    @OneToOne
+    @JoinColumn(name = "idUbicacion")
+    private Ubicacion ubicacion;
 
     public Comisaria() {
     }
 
-    public Comisaria(int idComisaria, String nombre_c, String telefono, String direccion) {
+    public Comisaria(int idComisaria, String nombre_c, String telefono, String direccion, Ubicacion ubicacion) {
         this.idComisaria = idComisaria;
         Nombre_c = nombre_c;
         Telefono = telefono;
         Direccion = direccion;
+        this.ubicacion = ubicacion;
     }
 
     public int getIdComisaria() {
@@ -57,5 +61,13 @@ public class Comisaria {
 
     public void setDireccion(String direccion) {
         Direccion = direccion;
+    }
+
+    public Ubicacion getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(Ubicacion ubicacion) {
+        this.ubicacion = ubicacion;
     }
 }

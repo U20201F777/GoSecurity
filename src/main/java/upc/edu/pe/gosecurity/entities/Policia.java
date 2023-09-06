@@ -17,15 +17,25 @@ public class Policia {
     @Column(name = "rangoP", length = 20, nullable = false)
     private int rangoP;
 
+    @ManyToOne
+    @JoinColumn(name = "idComisaria")
+    private Comisaria comisaria;
+
+    @ManyToOne
+    @JoinColumn(name = "idNotificacion")
+    private Notificacion notificacion;
+
     public Policia() {
     }
 
-    public Policia(int idPolicia, int nPlaca, String fotoRostro, String fotoIdentidad, int rangoP) {
+    public Policia(int idPolicia, int nPlaca, String fotoRostro, String fotoIdentidad, int rangoP, Comisaria comisaria, Notificacion notificacion) {
         this.idPolicia = idPolicia;
         this.nPlaca = nPlaca;
         this.fotoRostro = fotoRostro;
         this.fotoIdentidad = fotoIdentidad;
         this.rangoP = rangoP;
+        this.comisaria = comisaria;
+        this.notificacion = notificacion;
     }
 
     public int getIdPolicia() {
@@ -66,6 +76,22 @@ public class Policia {
 
     public void setRangoP(int rangoP) {
         this.rangoP = rangoP;
+    }
+
+    public Comisaria getComisaria() {
+        return comisaria;
+    }
+
+    public void setComisaria(Comisaria comisaria) {
+        this.comisaria = comisaria;
+    }
+
+    public Notificacion getNotificacion() {
+        return notificacion;
+    }
+
+    public void setNotificacion(Notificacion notificacion) {
+        this.notificacion = notificacion;
     }
 }
 

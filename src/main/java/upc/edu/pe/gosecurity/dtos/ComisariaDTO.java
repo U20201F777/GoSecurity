@@ -1,6 +1,5 @@
 package upc.edu.pe.gosecurity.dtos;
 
-import javax.persistence.Column;
 
 public class ComisariaDTO {
 
@@ -11,6 +10,7 @@ public class ComisariaDTO {
     private String Telefono;
 
     private String Direccion;
+
 
     public int getIdComisaria() {
         return idComisaria;
