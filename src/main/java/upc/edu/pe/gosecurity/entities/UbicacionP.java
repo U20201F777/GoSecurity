@@ -6,12 +6,12 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Ubicacion")
-public class Ubicacion {
+@Table(name = "UbicacionP")
+public class UbicacionP {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idUbicacion;
+    private int idUbicacionP;
     @Column(name = "Latitud", length = 50, nullable = false)
     private int Latitud;
     @Column(name = "Logitud", length = 50, nullable = false)
@@ -23,11 +23,11 @@ public class Ubicacion {
     private EstadoUbicacion estadoUbicacion;
 
 
-    public Ubicacion() {
+    public UbicacionP() {
     }
 
-    public Ubicacion(int idUbicacion, int latitud, int longitud, Date fecha, EstadoUbicacion estadoUbicacion) {
-        this.idUbicacion = idUbicacion;
+    public UbicacionP(int idUbicacion, int latitud, int longitud, Date fecha, EstadoUbicacion estadoUbicacion) {
+        this.idUbicacionP = idUbicacionP;
         Latitud = latitud;
         Longitud = longitud;
         Fecha = fecha;
@@ -35,11 +35,11 @@ public class Ubicacion {
     }
 
     public int getIdUbicacion() {
-        return idUbicacion;
+        return idUbicacionP;
     }
 
-    public void setIdUbicacion(int idUbicacion) {
-        this.idUbicacion = idUbicacion;
+    public void setIdUbicacion(int idUbicacionP) {
+        this.idUbicacionP = idUbicacionP;
     }
 
     public int getLatitud() {
