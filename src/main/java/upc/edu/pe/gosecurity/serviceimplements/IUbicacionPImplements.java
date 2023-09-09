@@ -8,7 +8,7 @@ import upc.edu.pe.gosecurity.serviceinterfaces.IUbicacionPService;
 
 import java.util.List;
 @Service
-public class IUbicacionPPImplements implements IUbicacionPService {
+public class IUbicacionPImplements implements IUbicacionPService {
 
     @Autowired
     private UbicacionPRepository uR;

@@ -1,33 +1,34 @@
 package upc.edu.pe.gosecurity.controllers;
 
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import upc.edu.pe.gosecurity.dtos.UbicacionPDTO;
-import upc.edu.pe.gosecurity.entities.UbicacionP;
-import upc.edu.pe.gosecurity.serviceinterfaces.IUbicacionPService;
+import upc.edu.pe.gosecurity.dtos.UbicacionCDTO;
+import upc.edu.pe.gosecurity.entities.UbicacionC;
+import upc.edu.pe.gosecurity.serviceinterfaces.IUbicacionCService;
 
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @RestController
-@RequestMapping("/UbicacionP")
-public class UbicacionPControllers {
+@RequestMapping("/UbicacionC")
+public class UbicacionCControllers {
+
     @Autowired
-    private IUbicacionPService uS;
+    private IUbicacionCService uS;
     @PostMapping
-    public void Registrar(@RequestBody UbicacionPDTO dto){
+    public void Registrar(@RequestBody UbicacionCDTO dto){
         ModelMapper m= new ModelMapper();
-        UbicacionP p=m.map(dto, UbicacionP.class);
-        uS.insert(p);
+        UbicacionC u =m.map(dto, UbicacionC.class);
+        uS.insert(u);
     }
     @GetMapping
-    public List<UbicacionPDTO> list() {
+    public List<UbicacionCDTO> list() {
         return uS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
-            return m.map(x, UbicacionPDTO.class);
+            return m.map(x, UbicacionCDTO.class);
         }).collect(Collectors.toList());
     }
     @DeleteMapping("/{id}")
@@ -36,16 +37,16 @@ public class UbicacionPControllers {
     }
 
     @GetMapping("/{id}")
-    public UbicacionPDTO listId(@PathVariable("id") Integer id) {
+    public UbicacionCDTO listId(@PathVariable("id") Integer id) {
         ModelMapper m = new ModelMapper();
-        UbicacionPDTO dto = m.map(uS.listId(id), UbicacionPDTO.class);
+        UbicacionCDTO dto = m.map(uS.listId(id), UbicacionCDTO.class);
         return dto;
     }
 
     @PutMapping
-    public void modificar(@RequestBody UbicacionPDTO dto){
+    public void modificar(@RequestBody UbicacionCDTO dto){
         ModelMapper m = new ModelMapper();
-        UbicacionP u = m.map(dto,UbicacionP.class);
+        UbicacionC u = m.map(dto,UbicacionC.class);
         uS.insert(u);
     }
 
