@@ -39,4 +39,10 @@ public class AyudaControllers {
         AyudaDTO dto = m.map(aS.listId(id), AyudaDTO.class);
         return dto;
     }
+    @PutMapping
+    public void Modificar(@RequestBody AyudaDTO dto){
+        ModelMapper m= new ModelMapper();
+        Ayuda p=m.map(dto, Ayuda.class);
+        aS.insert(p);
+    }
 }

@@ -39,4 +39,10 @@ public class TipoCasoController {
         TipoCasoDTO dto = m.map(tS.listId(id), TipoCasoDTO.class);
         return dto;
     }
+    @PutMapping
+    public void Modificar(@RequestBody TipoCasoDTO dto){
+        ModelMapper m= new ModelMapper();
+        TipoCaso p=m.map(dto, TipoCaso.class);
+        tS.insert(p);
+    }
 }
