@@ -4,7 +4,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import upc.edu.pe.gosecurity.dtos.AyudaDTO;
+import upc.edu.pe.gosecurity.dtos.NotificacionDTO;
 import upc.edu.pe.gosecurity.entities.Ayuda;
+import upc.edu.pe.gosecurity.entities.Notificacion;
 import upc.edu.pe.gosecurity.serviceinterfaces.IAyudaService;
 
 import java.util.List;
@@ -38,5 +40,11 @@ public class AyudaControllers {
         ModelMapper m = new ModelMapper();
         AyudaDTO dto = m.map(aS.listId(id), AyudaDTO.class);
         return dto;
+    }
+    @PutMapping
+    public void Modificar(@RequestBody AyudaDTO dto){
+        ModelMapper m= new ModelMapper();
+        Ayuda p=m.map(dto, Ayuda.class);
+        aS.insert(p);
     }
 }

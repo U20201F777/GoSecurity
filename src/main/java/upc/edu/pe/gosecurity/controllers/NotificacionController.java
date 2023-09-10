@@ -39,4 +39,10 @@ public class NotificacionController {
         NotificacionDTO dto = m.map(nS.listId(id), NotificacionDTO.class);
         return dto;
     }
+    @PutMapping
+    public void Modificar(@RequestBody NotificacionDTO dto){
+        ModelMapper m= new ModelMapper();
+        Notificacion p=m.map(dto, Notificacion.class);
+        nS.insert(p);
+    }
 }

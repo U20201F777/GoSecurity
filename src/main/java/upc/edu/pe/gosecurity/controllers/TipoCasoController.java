@@ -3,7 +3,9 @@ package upc.edu.pe.gosecurity.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import upc.edu.pe.gosecurity.dtos.NotificacionDTO;
 import upc.edu.pe.gosecurity.dtos.TipoCasoDTO;
+import upc.edu.pe.gosecurity.entities.Notificacion;
 import upc.edu.pe.gosecurity.entities.TipoCaso;
 import upc.edu.pe.gosecurity.serviceinterfaces.ITipoCasoService;
 
@@ -38,5 +40,11 @@ public class TipoCasoController {
         ModelMapper m = new ModelMapper();
         TipoCasoDTO dto = m.map(tS.listId(id), TipoCasoDTO.class);
         return dto;
+    }
+    @PutMapping
+    public void Modificar(@RequestBody TipoCasoDTO dto){
+        ModelMapper m= new ModelMapper();
+        TipoCaso p=m.map(dto, TipoCaso.class);
+        tS.insert(p);
     }
 }
