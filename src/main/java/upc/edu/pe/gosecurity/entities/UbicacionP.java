@@ -6,36 +6,40 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Ubicacion")
-public class Ubicacion {
+@Table(name = "UbicacionP")
+public class UbicacionP {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idUbicacion;
+    private int idUbicacionP;
     @Column(name = "Latitud", length = 50, nullable = false)
     private int Latitud;
     @Column(name = "Logitud", length = 50, nullable = false)
     private int Longitud;
     @Column(name = "Fecha", nullable = false)
     private Date Fecha;
+    @OneToOne
+    @JoinColumn(name = "idEstadoUbicacion")
+    private EstadoUbicacion estadoUbicacion;
 
 
-    public Ubicacion() {
+    public UbicacionP() {
     }
 
-    public Ubicacion(int idUbicacion, int latitud, int longitud, Date fecha) {
-        this.idUbicacion = idUbicacion;
+    public UbicacionP(int idUbicacion, int latitud, int longitud, Date fecha, EstadoUbicacion estadoUbicacion) {
+        this.idUbicacionP = idUbicacionP;
         Latitud = latitud;
         Longitud = longitud;
         Fecha = fecha;
+        this.estadoUbicacion = estadoUbicacion;
     }
 
     public int getIdUbicacion() {
-        return idUbicacion;
+        return idUbicacionP;
     }
 
-    public void setIdUbicacion(int idUbicacion) {
-        this.idUbicacion = idUbicacion;
+    public void setIdUbicacion(int idUbicacionP) {
+        this.idUbicacionP = idUbicacionP;
     }
 
     public int getLatitud() {
@@ -60,5 +64,13 @@ public class Ubicacion {
 
     public void setFecha(Date fecha) {
         Fecha = fecha;
+    }
+
+    public EstadoUbicacion getEstadoUbicacion() {
+        return estadoUbicacion;
+    }
+
+    public void setEstadoUbicacion(EstadoUbicacion estadoUbicacion) {
+        this.estadoUbicacion = estadoUbicacion;
     }
 }

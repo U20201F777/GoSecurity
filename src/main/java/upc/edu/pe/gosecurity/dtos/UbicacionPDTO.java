@@ -1,11 +1,10 @@
 package upc.edu.pe.gosecurity.dtos;
 
-import javax.persistence.Column;
 import java.util.Date;
 
-public class UbicacionDTO {
+public class UbicacionPDTO {
 
-    private int idUbicacion;
+    private int idUbicacionP;
 
     private int Latitud;
 
@@ -14,11 +13,11 @@ public class UbicacionDTO {
     private Date Fecha;
 
     public int getIdUbicacion() {
-        return idUbicacion;
+        return idUbicacionP;
     }
 
     public void setIdUbicacion(int idUbicacion) {
-        this.idUbicacion = idUbicacion;
+        this.idUbicacionP = idUbicacionP;
     }
 
     public int getLatitud() {

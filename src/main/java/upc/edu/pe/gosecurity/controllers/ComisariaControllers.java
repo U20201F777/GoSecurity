@@ -41,4 +41,12 @@ public class ComisariaControllers {
         ComisariaDTO dto = m.map(cS.listId(id), ComisariaDTO.class);
         return dto;
     }
+
+    @PutMapping
+    public void modificar(@RequestBody ComisariaDTO dto){
+        ModelMapper m = new ModelMapper();
+        Comisaria c = m.map(dto, Comisaria.class);
+        cS.insert(c);
+    }
+
 }
