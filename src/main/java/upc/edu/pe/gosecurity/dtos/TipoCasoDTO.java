@@ -4,7 +4,6 @@ public class TipoCasoDTO {
     private int idTipoCaso;
     private String TipoCaso;
     private String Estado_notificacion;
-
     public int getIdTipoCaso() {
         return idTipoCaso;
     }

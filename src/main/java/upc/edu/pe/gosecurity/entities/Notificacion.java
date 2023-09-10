@@ -9,18 +9,14 @@ public class Notificacion {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private int idNotificación;
    @ManyToOne
-   @JoinColumn(name = "idAyuda")
-   private Ayuda idAyuda;
-   @ManyToOne
    @JoinColumn(name = "idTipoCaso")
    private TipoCaso idTipoCaso;
 
     public Notificacion() {
     }
 
-    public Notificacion(int idNotificación, Ayuda idAyuda, TipoCaso idTipoCaso) {
+    public Notificacion(int idNotificación, TipoCaso idTipoCaso) {
         this.idNotificación = idNotificación;
-        this.idAyuda = idAyuda;
         this.idTipoCaso = idTipoCaso;
     }
 
@@ -30,14 +26,6 @@ public class Notificacion {
 
     public void setIdNotificación(int idNotificación) {
         this.idNotificación = idNotificación;
-    }
-
-    public Ayuda getIdAyuda() {
-        return idAyuda;
-    }
-
-    public void setIdAyuda(Ayuda idAyuda) {
-        this.idAyuda = idAyuda;
     }
 
     public TipoCaso getIdTipoCaso() {

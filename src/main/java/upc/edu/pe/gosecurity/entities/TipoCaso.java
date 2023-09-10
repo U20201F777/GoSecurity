@@ -12,7 +12,6 @@ public class TipoCaso {
     private String TipoCaso;
     @Column(name = "Estado_notificacion", length = 25, nullable = false)
     private String Estado_notificacion;
-
     public TipoCaso() {
     }
 

@@ -9,18 +9,19 @@ public class Ayuda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idAyuda;
-    @Column(name = "estadoAyuda", length = 25, nullable = false)
-    private String estadoAyuda;
     @Column(name = "fechaAyuda", nullable = false)
     private LocalDate fechaAyuda;
+    @ManyToOne
+    @JoinColumn(name = "idTipoCaso")
+    private TipoCaso idTipoCaso;
 
     public Ayuda() {
     }
 
-    public Ayuda(int idAyuda, String estadoAyuda, LocalDate fechaAyuda) {
+    public Ayuda(int idAyuda, LocalDate fechaAyuda, TipoCaso idTipoCaso) {
         this.idAyuda = idAyuda;
-        this.estadoAyuda = estadoAyuda;
         this.fechaAyuda = fechaAyuda;
+        this.idTipoCaso = idTipoCaso;
     }
 
     public int getIdAyuda() {
@@ -31,19 +32,19 @@ public class Ayuda {
         this.idAyuda = idAyuda;
     }
 
-    public String getEstadoAyuda() {
-        return estadoAyuda;
-    }
-
-    public void setEstadoAyuda(String estadoAyuda) {
-        this.estadoAyuda = estadoAyuda;
-    }
-
     public LocalDate getFechaAyuda() {
         return fechaAyuda;
     }
 
     public void setFechaAyuda(LocalDate fechaAyuda) {
         this.fechaAyuda = fechaAyuda;
+    }
+
+    public TipoCaso getIdTipoCaso() {
+        return idTipoCaso;
+    }
+
+    public void setIdTipoCaso(TipoCaso idTipoCaso) {
+        this.idTipoCaso = idTipoCaso;
     }
 }
