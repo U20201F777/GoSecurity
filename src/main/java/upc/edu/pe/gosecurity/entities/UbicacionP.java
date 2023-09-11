@@ -3,7 +3,8 @@ package upc.edu.pe.gosecurity.entities;
 
 import javax.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Entity
 @Table(name = "UbicacionP")
@@ -17,7 +18,7 @@ public class UbicacionP {
     @Column(name = "Logitud", length = 50, nullable = false)
     private int Longitud;
     @Column(name = "Fecha", nullable = false)
-    private Date Fecha;
+    private LocalDate Fecha;
     @ManyToOne
     @JoinColumn(name = "idEstadoUbicacion")
     private EstadoUbicacion estadoUbicacion;
@@ -26,7 +27,7 @@ public class UbicacionP {
     public UbicacionP() {
     }
 
-    public UbicacionP(int idUbicacion, int latitud, int longitud, Date fecha, EstadoUbicacion estadoUbicacion) {
+    public UbicacionP(int idUbicacionP, int latitud, int longitud, LocalDate fecha, EstadoUbicacion estadoUbicacion) {
         this.idUbicacionP = idUbicacionP;
         Latitud = latitud;
         Longitud = longitud;
@@ -34,11 +35,11 @@ public class UbicacionP {
         this.estadoUbicacion = estadoUbicacion;
     }
 
-    public int getIdUbicacion() {
+    public int getIdUbicacionP() {
         return idUbicacionP;
     }
 
-    public void setIdUbicacion(int idUbicacionP) {
+    public void setIdUbicacionP(int idUbicacionP) {
         this.idUbicacionP = idUbicacionP;
     }
 
@@ -58,11 +59,11 @@ public class UbicacionP {
         Longitud = longitud;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return Fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) {
         Fecha = fecha;
     }
 

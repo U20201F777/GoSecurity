@@ -47,4 +47,12 @@ public class ComisariaDTO {
     public void setDireccion(String direccion) {
         Direccion = direccion;
     }
+
+    public UbicacionC getUbicacionC() {
+        return ubicacionC;
+    }
+
+    public void setUbicacionC(UbicacionC ubicacionC) {
+        this.ubicacionC = ubicacionC;
+    }
 }
