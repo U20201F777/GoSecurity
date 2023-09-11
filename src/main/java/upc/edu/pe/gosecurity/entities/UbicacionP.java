@@ -18,7 +18,7 @@ public class UbicacionP {
     private int Longitud;
     @Column(name = "Fecha", nullable = false)
     private Date Fecha;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "idEstadoUbicacion")
     private EstadoUbicacion estadoUbicacion;
 

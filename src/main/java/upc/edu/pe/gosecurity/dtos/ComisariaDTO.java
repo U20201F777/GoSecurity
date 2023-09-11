@@ -1,6 +1,9 @@
 package upc.edu.pe.gosecurity.dtos;
 
 
+import upc.edu.pe.gosecurity.entities.Comisaria;
+import upc.edu.pe.gosecurity.entities.UbicacionC;
+
 public class ComisariaDTO {
 
     private int idComisaria;
@@ -11,6 +14,7 @@ public class ComisariaDTO {
 
     private String Direccion;
 
+    private UbicacionC ubicacionC;
 
     public int getIdComisaria() {
         return idComisaria;
