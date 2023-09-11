@@ -2,7 +2,8 @@ package upc.edu.pe.gosecurity.dtos;
 
 import upc.edu.pe.gosecurity.entities.EstadoUbicacion;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class UbicacionPDTO {
 
@@ -12,7 +13,7 @@ public class UbicacionPDTO {
 
     private int Longitud;
 
-    private Date Fecha;
+    private LocalDate Fecha;
 
     private EstadoUbicacion estadoUbicacion;
 
@@ -40,11 +41,11 @@ public class UbicacionPDTO {
         Longitud = longitud;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return Fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) {
         Fecha = fecha;
     }
 
