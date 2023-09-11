@@ -3,9 +3,7 @@ package upc.edu.pe.gosecurity.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import upc.edu.pe.gosecurity.dtos.NotificacionDTO;
 import upc.edu.pe.gosecurity.dtos.TipoCasoDTO;
-import upc.edu.pe.gosecurity.entities.Notificacion;
 import upc.edu.pe.gosecurity.entities.TipoCaso;
 import upc.edu.pe.gosecurity.serviceinterfaces.ITipoCasoService;
 
