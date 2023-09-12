@@ -29,4 +29,9 @@ public class PModeloImplements implements PModeloInterfaces {
     public PertenenciasModelo ListId(int idPertenenciasModelo){
         return ModR.findById(idPertenenciasModelo).orElse(new PertenenciasModelo());
     }
+
+    @Override
+    public List<PertenenciasModelo> findByNamePertenenciasModelo(String namePertenenciasModelo) {
+        return ModR.findByNamePertenenciasModelo(namePertenenciasModelo);
+    }
 }

@@ -2,14 +2,14 @@ package upc.edu.pe.gosecurity.dtos;
 
 public class PTipoDTO {
     private int idPerteneneciasTipo;
-    private String namePerson;
+    private String namePertenenciasTipo;
 
     public PTipoDTO() {
     }
 
     public PTipoDTO(int idPerteneneciasTipo, String namePerson) {
         this.idPerteneneciasTipo = idPerteneneciasTipo;
-        this.namePerson = namePerson;
+        this.namePertenenciasTipo = namePerson;
     }
 
     public int getIdPerteneneciasTipo() {
@@ -21,10 +21,10 @@ public class PTipoDTO {
     }
 
     public String getNamePerson() {
-        return namePerson;
+        return namePertenenciasTipo;
     }
 
     public void setNamePerson(String namePerson) {
-        this.namePerson = namePerson;
+        this.namePertenenciasTipo = namePerson;
     }
 }

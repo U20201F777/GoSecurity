@@ -9,4 +9,6 @@ public interface PTipoInterfaces {
     public List<PertenenciasTipo> list();
     public void delete(int idPerteneneciasTipo);
     public PertenenciasTipo ListId(int idPerteneneciasTipo);
+
+    List<PertenenciasTipo>findByNamePertenenciasTipo (String namePertenenciasTipo);
 }

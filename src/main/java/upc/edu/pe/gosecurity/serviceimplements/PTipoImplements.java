@@ -35,4 +35,9 @@ public class PTipoImplements implements PTipoInterfaces {
 
     }
 
+    @Override
+    public List<PertenenciasTipo> findByNamePertenenciasTipo(String namePertenenciasTipo) {
+        return TR.findByNamePertenenciasTipo(namePertenenciasTipo);
+    }
+
 }

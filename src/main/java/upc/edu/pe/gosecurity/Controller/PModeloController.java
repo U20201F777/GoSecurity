@@ -3,6 +3,7 @@ package upc.edu.pe.gosecurity.Controller;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import upc.edu.pe.gosecurity.dtos.PColorDTO;
 import upc.edu.pe.gosecurity.dtos.PModeloDTO;
 import upc.edu.pe.gosecurity.entities.PertenenciasModelo;
 import upc.edu.pe.gosecurity.serviceinterfaces.PModeloInterfaces;
@@ -16,7 +17,7 @@ public class PModeloController {
     @Autowired
     private PModeloInterfaces ModR;
     @PostMapping
-    public void resgitrar(@RequestBody PModeloDTO dto){
+    public void registrar(@RequestBody PModeloDTO dto){
         ModelMapper m = new ModelMapper();
         PertenenciasModelo p=m.map(dto,PertenenciasModelo.class);
         ModR.insert(p);
@@ -40,5 +41,20 @@ public class PModeloController {
         ModelMapper m = new ModelMapper();
         PModeloDTO dto=m.map(ModR.ListId(id), PModeloDTO.class);
         return dto;
+    }
+
+    @PostMapping("/buscar")
+    public List<PModeloDTO>buscar(@RequestBody String name){
+        return ModR.findByNamePertenenciasModelo(name).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, PModeloDTO.class);
+        }).collect(Collectors.toList());
+    }
+
+    @PutMapping
+    public void Modificar(@RequestBody PModeloDTO dto){
+        ModelMapper m = new ModelMapper();
+        PertenenciasModelo p=m.map(dto,PertenenciasModelo.class);
+        ModR.insert(p);
     }
 }

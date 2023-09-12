@@ -3,7 +3,10 @@ package upc.edu.pe.gosecurity.Controller;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import upc.edu.pe.gosecurity.dtos.PColorDTO;
+import upc.edu.pe.gosecurity.dtos.PMarcaDTO;
 import upc.edu.pe.gosecurity.dtos.PTipoDTO;
+import upc.edu.pe.gosecurity.entities.PertenenciasMarca;
 import upc.edu.pe.gosecurity.entities.PertenenciasTipo;
 import upc.edu.pe.gosecurity.serviceinterfaces.PTipoInterfaces;
 
@@ -16,7 +19,7 @@ public class PeTipoController {
     @Autowired
     private PTipoInterfaces TR;
     @PostMapping
-    public void resgitrar(@RequestBody PTipoDTO dto){
+    public void registrar(@RequestBody PTipoDTO dto){
         ModelMapper m = new ModelMapper();
         PertenenciasTipo p=m.map(dto,PertenenciasTipo.class);
         TR.insert(p);
@@ -40,5 +43,20 @@ public class PeTipoController {
         ModelMapper m = new ModelMapper();
         PTipoDTO dto=m.map(TR.ListId(id), PTipoDTO.class);
         return dto;
+    }
+
+    @PostMapping("/buscar")
+    public List<PTipoDTO>buscar(@RequestBody String name){
+        return TR.findByNamePertenenciasTipo(name).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, PTipoDTO.class);
+        }).collect(Collectors.toList());
+    }
+
+    @PutMapping
+    public void Modificar(@RequestBody PTipoDTO dto){
+        ModelMapper m = new ModelMapper();
+        PertenenciasTipo p=m.map(dto,PertenenciasTipo.class);
+        TR.insert(p);
     }
 }

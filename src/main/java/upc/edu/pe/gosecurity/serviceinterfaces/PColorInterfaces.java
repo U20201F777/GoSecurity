@@ -9,4 +9,6 @@ public interface PColorInterfaces {
     public List<PertenenciasColor> list();
     public void delete(int idPertenenciasColor);
     public PertenenciasColor ListId(int idPertenenciasColor);
+
+    List<PertenenciasColor>findByNamePertenenciasColor(String namePertenenciasColor);
 }

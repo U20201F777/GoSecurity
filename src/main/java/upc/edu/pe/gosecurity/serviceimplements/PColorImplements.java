@@ -30,4 +30,9 @@ public class PColorImplements implements PColorInterfaces {
     public PertenenciasColor ListId(int idPertenenciasColor){
         return CR.findById(idPertenenciasColor).orElse(new PertenenciasColor());
     }
+
+    @Override
+    public List<PertenenciasColor> findByNamePertenenciasColor(String namePertenenciasColor) {
+        return CR.findByNamePertenenciasColor(namePertenenciasColor);
+    }
 }

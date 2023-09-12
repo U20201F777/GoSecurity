@@ -4,9 +4,12 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import upc.edu.pe.gosecurity.dtos.PColorDTO;
+import upc.edu.pe.gosecurity.dtos.PTipoDTO;
 import upc.edu.pe.gosecurity.entities.PertenenciasColor;
+import upc.edu.pe.gosecurity.entities.PertenenciasTipo;
 import upc.edu.pe.gosecurity.serviceinterfaces.PColorInterfaces;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,7 +19,7 @@ public class PColorController {
     @Autowired
     private PColorInterfaces CR;
     @PostMapping
-    public void resgitrar(@RequestBody PColorDTO dto){
+    public void registrar(@RequestBody PColorDTO dto){
         ModelMapper m = new ModelMapper();
         PertenenciasColor p=m.map(dto,PertenenciasColor.class);
         CR.insert(p);
@@ -40,5 +43,20 @@ public class PColorController {
         ModelMapper m = new ModelMapper();
         PColorDTO dto=m.map(CR.ListId(id), PColorDTO.class);
         return dto;
+    }
+
+    @PostMapping("/buscar")
+    public List<PColorDTO>buscar(@RequestBody String name){
+        return CR.findByNamePertenenciasColor(name).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, PColorDTO.class);
+        }).collect(Collectors.toList());
+    }
+
+    @PutMapping
+    public void Modificar(@RequestBody PColorDTO dto){
+        ModelMapper m = new ModelMapper();
+        PertenenciasColor p=m.map(dto,PertenenciasColor.class);
+        CR.insert(p);
     }
 }

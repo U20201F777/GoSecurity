@@ -9,14 +9,14 @@ public class PertenenciasTipo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPerteneneciasTipo;
     @Column (name = "namePerteneciasTipo",length = 100,nullable = false)
-    private String namePerson;
+    private String namePertenenciasTipo;
 
     public PertenenciasTipo() {
     }
 
     public PertenenciasTipo(int idPerteneneciasTipo, String namePerson) {
         this.idPerteneneciasTipo = idPerteneneciasTipo;
-        this.namePerson = namePerson;
+        this.namePertenenciasTipo = namePerson;
     }
 
     public int getIdPerteneneciasTipo() {
@@ -28,10 +28,10 @@ public class PertenenciasTipo {
     }
 
     public String getNamePerson() {
-        return namePerson;
+        return namePertenenciasTipo;
     }
 
     public void setNamePerson(String namePerson) {
-        this.namePerson = namePerson;
+        this.namePertenenciasTipo = namePerson;
     }
 }

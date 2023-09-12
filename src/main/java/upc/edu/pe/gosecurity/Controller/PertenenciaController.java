@@ -3,6 +3,7 @@ package upc.edu.pe.gosecurity.Controller;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import upc.edu.pe.gosecurity.dtos.PColorDTO;
 import upc.edu.pe.gosecurity.dtos.PertenenciaDTO;
 import upc.edu.pe.gosecurity.entities.Pertenencias;
 import upc.edu.pe.gosecurity.serviceimplements.PertenenciasImplements;
@@ -16,7 +17,7 @@ public class PertenenciaController {
     @Autowired
     private PertenenciasImplements PR;
     @PostMapping
-    public void resgitrar(@RequestBody PertenenciaDTO dto){
+    public void registrar(@RequestBody PertenenciaDTO dto){
         ModelMapper m = new ModelMapper();
         Pertenencias p=m.map(dto,Pertenencias.class);
         PR.insert(p);
@@ -40,5 +41,13 @@ public class PertenenciaController {
         ModelMapper m = new ModelMapper();
         PertenenciaDTO dto=m.map(PR.ListId(id), PertenenciaDTO.class);
         return dto;
+    }
+
+    @PostMapping("/buscar")
+    public List<PertenenciaDTO>buscar(@RequestBody String name){
+        return PR.findByNamePertenencias(name).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, PertenenciaDTO.class);
+        }).collect(Collectors.toList());
     }
 }

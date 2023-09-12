@@ -3,8 +3,11 @@ package upc.edu.pe.gosecurity.Controller;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import upc.edu.pe.gosecurity.dtos.PColorDTO;
 import upc.edu.pe.gosecurity.dtos.PMarcaDTO;
+import upc.edu.pe.gosecurity.dtos.PModeloDTO;
 import upc.edu.pe.gosecurity.entities.PertenenciasMarca;
+import upc.edu.pe.gosecurity.entities.PertenenciasModelo;
 import upc.edu.pe.gosecurity.serviceinterfaces.PMarcaInterfaces;
 
 import java.util.List;
@@ -16,7 +19,7 @@ public class PMarcaController {
     @Autowired
     private PMarcaInterfaces MarR;
     @PostMapping
-    public void resgitrar(@RequestBody PMarcaDTO dto){
+    public void registrar(@RequestBody PMarcaDTO dto){
         ModelMapper m = new ModelMapper();
         PertenenciasMarca p=m.map(dto,PertenenciasMarca.class);
         MarR.insert(p);
@@ -40,5 +43,20 @@ public class PMarcaController {
         ModelMapper m = new ModelMapper();
         PMarcaDTO dto=m.map(MarR.ListId(id), PMarcaDTO.class);
         return dto;
+    }
+
+    @PostMapping("/buscar")
+    public List<PMarcaDTO>buscar(@RequestBody String name){
+        return MarR.findByNamePertenenciasMarca(name).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, PMarcaDTO.class);
+        }).collect(Collectors.toList());
+    }
+
+    @PutMapping
+    public void Modificar(@RequestBody PMarcaDTO dto){
+        ModelMapper m = new ModelMapper();
+        PertenenciasMarca p=m.map(dto,PertenenciasMarca.class);
+        MarR.insert(p);
     }
 }
