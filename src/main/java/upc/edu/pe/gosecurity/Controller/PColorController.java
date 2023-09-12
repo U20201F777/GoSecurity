@@ -44,7 +44,6 @@ public class PColorController {
         PColorDTO dto=m.map(CR.ListId(id), PColorDTO.class);
         return dto;
     }
-
     @PostMapping("/buscar")
     public List<PColorDTO>buscar(@RequestBody String name){
         return CR.findByNamePertenenciasColor(name).stream().map(x->{
@@ -59,4 +58,5 @@ public class PColorController {
         PertenenciasColor p=m.map(dto,PertenenciasColor.class);
         CR.insert(p);
     }
+
 }

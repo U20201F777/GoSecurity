@@ -11,3 +11,4 @@ import java.util.List;
 public interface PColorRepository extends JpaRepository <PertenenciasColor,Integer> {
     List<PertenenciasColor>findByNamePertenenciasColor(String namePertenenciasColor);
 }
+

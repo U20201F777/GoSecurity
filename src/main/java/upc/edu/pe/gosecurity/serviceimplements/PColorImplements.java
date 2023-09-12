@@ -36,3 +36,4 @@ public class PColorImplements implements PColorInterfaces {
         return CR.findByNamePertenenciasColor(namePertenenciasColor);
     }
 }
+

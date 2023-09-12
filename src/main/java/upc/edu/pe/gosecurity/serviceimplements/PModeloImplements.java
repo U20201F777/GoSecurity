@@ -35,3 +35,4 @@ public class PModeloImplements implements PModeloInterfaces {
         return ModR.findByNamePertenenciasModelo(namePertenenciasModelo);
     }
 }
+

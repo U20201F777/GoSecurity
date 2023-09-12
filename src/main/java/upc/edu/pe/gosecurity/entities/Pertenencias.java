@@ -93,3 +93,4 @@ public class Pertenencias {
         SeriePertenencias = seriePertenencias;
     }
 }
+

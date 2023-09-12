@@ -11,3 +11,4 @@ import java.util.List;
 public interface PertenenciasRepository extends JpaRepository <Pertenencias,Integer> {
     List<Pertenencias>findByNamePertenencias(String namePertenencias);
 }
+

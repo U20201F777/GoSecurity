@@ -35,3 +35,4 @@ public class PertenenciasMarca {
         this.namePertenenciasMarca = namePertenenciasMarca;
     }
 }
+

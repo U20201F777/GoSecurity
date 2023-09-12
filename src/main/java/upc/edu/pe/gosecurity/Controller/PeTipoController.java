@@ -44,7 +44,6 @@ public class PeTipoController {
         PTipoDTO dto=m.map(TR.ListId(id), PTipoDTO.class);
         return dto;
     }
-
     @PostMapping("/buscar")
     public List<PTipoDTO>buscar(@RequestBody String name){
         return TR.findByNamePertenenciasTipo(name).stream().map(x->{
@@ -59,4 +58,5 @@ public class PeTipoController {
         PertenenciasTipo p=m.map(dto,PertenenciasTipo.class);
         TR.insert(p);
     }
+
 }

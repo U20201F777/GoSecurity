@@ -35,3 +35,4 @@ public class PertenenciasTipo {
         this.namePertenenciasTipo = namePerson;
     }
 }
+

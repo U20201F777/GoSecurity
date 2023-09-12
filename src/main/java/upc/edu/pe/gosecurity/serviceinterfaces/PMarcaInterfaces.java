@@ -12,3 +12,4 @@ public interface PMarcaInterfaces {
 
     List<PertenenciasMarca>findByNamePertenenciasMarca(String namePertenenciasMarca);
 }
+

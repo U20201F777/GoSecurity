@@ -37,3 +37,4 @@ public class PMarcaImplements implements PMarcaInterfaces {
         return MarR.findByNamePertenenciasMarca(namePertenenciasMarca);
     }
 }
+

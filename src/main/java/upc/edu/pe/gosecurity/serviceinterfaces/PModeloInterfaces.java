@@ -12,3 +12,4 @@ public interface PModeloInterfaces {
 
     List<PertenenciasModelo>findByNamePertenenciasModelo (String namePertenenciasModelo);
 }
+

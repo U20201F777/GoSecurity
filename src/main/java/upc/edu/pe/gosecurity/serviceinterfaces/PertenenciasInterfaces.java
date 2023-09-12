@@ -12,3 +12,4 @@ public interface PertenenciasInterfaces {
 
     List<Pertenencias>findByNamePertenencias(String namePertenencias);
 }
+

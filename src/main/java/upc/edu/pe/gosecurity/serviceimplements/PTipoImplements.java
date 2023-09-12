@@ -39,5 +39,5 @@ public class PTipoImplements implements PTipoInterfaces {
     public List<PertenenciasTipo> findByNamePertenenciasTipo(String namePertenenciasTipo) {
         return TR.findByNamePertenenciasTipo(namePertenenciasTipo);
     }
-
 }
+

@@ -4,8 +4,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import upc.edu.pe.gosecurity.dtos.PColorDTO;
+import upc.edu.pe.gosecurity.dtos.PTipoDTO;
 import upc.edu.pe.gosecurity.dtos.PertenenciaDTO;
 import upc.edu.pe.gosecurity.entities.Pertenencias;
+import upc.edu.pe.gosecurity.entities.PertenenciasTipo;
 import upc.edu.pe.gosecurity.serviceimplements.PertenenciasImplements;
 
 import java.util.List;
@@ -49,5 +51,12 @@ public class PertenenciaController {
             ModelMapper m=new ModelMapper();
             return m.map(x, PertenenciaDTO.class);
         }).collect(Collectors.toList());
+    }
+
+    @PutMapping
+    public void Modificar(@RequestBody PertenenciaDTO dto){
+        ModelMapper m = new ModelMapper();
+        Pertenencias p=m.map(dto,Pertenencias.class);
+        PR.insert(p);
     }
 }

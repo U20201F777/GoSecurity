@@ -44,7 +44,6 @@ public class PMarcaController {
         PMarcaDTO dto=m.map(MarR.ListId(id), PMarcaDTO.class);
         return dto;
     }
-
     @PostMapping("/buscar")
     public List<PMarcaDTO>buscar(@RequestBody String name){
         return MarR.findByNamePertenenciasMarca(name).stream().map(x->{
@@ -59,4 +58,5 @@ public class PMarcaController {
         PertenenciasMarca p=m.map(dto,PertenenciasMarca.class);
         MarR.insert(p);
     }
+
 }

@@ -28,3 +28,4 @@ public class PMarcaDTO {
         this.namePertenenciasMarca = namePertenenciasMarca;
     }
 }
+

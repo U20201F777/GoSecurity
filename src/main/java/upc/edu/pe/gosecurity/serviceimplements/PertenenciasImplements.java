@@ -37,3 +37,4 @@ public class PertenenciasImplements implements PertenenciasInterfaces {
         return PR.findByNamePertenencias(namePertenencias);
     }
 }
+

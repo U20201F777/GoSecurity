@@ -12,3 +12,4 @@ public interface PColorInterfaces {
 
     List<PertenenciasColor>findByNamePertenenciasColor(String namePertenenciasColor);
 }
+

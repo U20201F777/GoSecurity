@@ -42,7 +42,6 @@ public class PModeloController {
         PModeloDTO dto=m.map(ModR.ListId(id), PModeloDTO.class);
         return dto;
     }
-
     @PostMapping("/buscar")
     public List<PModeloDTO>buscar(@RequestBody String name){
         return ModR.findByNamePertenenciasModelo(name).stream().map(x->{
@@ -57,4 +56,5 @@ public class PModeloController {
         PertenenciasModelo p=m.map(dto,PertenenciasModelo.class);
         ModR.insert(p);
     }
+
 }

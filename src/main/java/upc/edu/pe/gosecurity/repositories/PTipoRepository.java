@@ -11,3 +11,4 @@ import java.util.List;
 public interface PTipoRepository extends JpaRepository<PertenenciasTipo,Integer> {
     List<PertenenciasTipo>findByNamePertenenciasTipo (String namePertenenciasTipo);
 }
+
