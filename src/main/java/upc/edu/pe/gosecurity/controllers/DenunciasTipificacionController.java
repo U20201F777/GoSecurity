@@ -1,12 +1,14 @@
 package upc.edu.pe.gosecurity.controllers;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import upc.edu.pe.gosecurity.dtos.DenunciasTipificacion;
+import org.springframework.web.bind.annotation.*;
+import upc.edu.pe.gosecurity.dtos.DenunciasTipificacionDTO;
+import upc.edu.pe.gosecurity.entities.DenunciasTipificacion;
 import upc.edu.pe.gosecurity.serviceinterfaces.IDenunciasTipificacionService;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/denunciastipificacion")
@@ -14,7 +16,17 @@ public class DenunciasTipificacionController {
     @Autowired
     private IDenunciasTipificacionService pS;
     @PostMapping
-    public void registrar(@RequestBody DenunciasTipificacion dto){
+    public void registrar(@RequestBody DenunciasTipificacionDTO dto){
+        ModelMapper m = new ModelMapper();
+        DenunciasTipificacion d=m.map(dto, DenunciasTipificacion.class);
+        pS.insert(d);
 
+    }
+    @GetMapping
+    public List<DenunciasTipificacionDTO> Listar(){
+        return pS.LIST().stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, DenunciasTipificacionDTO.class);
+        }).collect(Collectors.toList());
     }
 }

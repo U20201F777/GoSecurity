@@ -1,6 +1,6 @@
 package upc.edu.pe.gosecurity.dtos;
 
-public class DenunciasTipificacion {
+public class DenunciasTipificacionDTO {
     private int idDenunciasTipificacion;
     private String nameDenunciasTipificacion;
     private String Tipo_tDenuncia;
