@@ -10,16 +10,16 @@ public class TipoCaso {
     private int idTipoCaso;
     @Column(name = "TipoCaso", length = 50, nullable = false)
     private String TipoCaso;
-    @Column(name = "Estado_notificacion", length = 25, nullable = false)
-    private String Estado_notificacion;
+    @Column(name = "Estado", length = 25, nullable = false)
+    private String Estado;
     public TipoCaso() {
     }
 
-    public TipoCaso(int idTipoCaso, String tipoCaso, String estado_notificacion) {
+    public TipoCaso(int idTipoCaso, String tipoCaso, String estado) {
 
         this.idTipoCaso = idTipoCaso;
         TipoCaso = tipoCaso;
-        Estado_notificacion = estado_notificacion;
+        Estado = estado;
     }
 
     public int getIdTipoCaso() {
@@ -38,11 +38,11 @@ public class TipoCaso {
         TipoCaso = tipoCaso;
     }
 
-    public String getEstado_notificacion() {
-        return Estado_notificacion;
+    public String getEstado() {
+        return Estado;
     }
 
-    public void setEstado_notificacion(String estado_notificacion) {
-        Estado_notificacion = estado_notificacion;
+    public void setEstado(String estado) {
+        Estado = estado;
     }
 }

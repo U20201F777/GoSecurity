@@ -3,7 +3,7 @@ package upc.edu.pe.gosecurity.dtos;
 public class TipoCasoDTO {
     private int idTipoCaso;
     private String TipoCaso;
-    private String Estado_notificacion;
+    private String Estado;
     public int getIdTipoCaso() {
         return idTipoCaso;
     }
@@ -20,11 +20,11 @@ public class TipoCasoDTO {
         TipoCaso = tipoCaso;
     }
 
-    public String getEstado_notificacion() {
-        return Estado_notificacion;
+    public String getEstado() {
+        return Estado;
     }
 
-    public void setEstado_notificacion(String estado_notificacion) {
-        Estado_notificacion = estado_notificacion;
+    public void setEstado(String estado_notificacion) {
+        Estado = estado_notificacion;
     }
 }
