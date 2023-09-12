@@ -4,14 +4,6 @@ public class PColorDTO {
     private int idPertenenciasColor;
     private String namePertenenciasColor;
 
-    public PColorDTO() {
-    }
-
-    public PColorDTO(int idPertenenciasColor, String namePertenenciasColor) {
-        this.idPertenenciasColor = idPertenenciasColor;
-        this.namePertenenciasColor = namePertenenciasColor;
-    }
-
     public int getIdPertenenciasColor() {
         return idPertenenciasColor;
     }

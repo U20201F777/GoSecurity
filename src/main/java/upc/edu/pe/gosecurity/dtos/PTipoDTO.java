@@ -4,13 +4,6 @@ public class PTipoDTO {
     private int idPerteneneciasTipo;
     private String namePertenenciasTipo;
 
-    public PTipoDTO() {
-    }
-
-    public PTipoDTO(int idPerteneneciasTipo, String namePerson) {
-        this.idPerteneneciasTipo = idPerteneneciasTipo;
-        this.namePertenenciasTipo = namePerson;
-    }
 
     public int getIdPerteneneciasTipo() {
         return idPerteneneciasTipo;
@@ -24,8 +17,8 @@ public class PTipoDTO {
         return namePertenenciasTipo;
     }
 
-    public void setNamePerson(String namePerson) {
-        this.namePertenenciasTipo = namePerson;
+    public void setNamePerson(String namePertenenciasTipo) {
+        this.namePertenenciasTipo = namePertenenciasTipo;
     }
 }
 

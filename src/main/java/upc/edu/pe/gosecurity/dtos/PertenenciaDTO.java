@@ -1,5 +1,12 @@
 package upc.edu.pe.gosecurity.dtos;
 
+import upc.edu.pe.gosecurity.entities.PertenenciasColor;
+import upc.edu.pe.gosecurity.entities.PertenenciasMarca;
+import upc.edu.pe.gosecurity.entities.PertenenciasModelo;
+import upc.edu.pe.gosecurity.entities.PertenenciasTipo;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
 public class PertenenciaDTO {
@@ -10,19 +17,11 @@ public class PertenenciaDTO {
     private String ImagenPertenencias;
     private String CodigoPertenencias;
     private int SeriePertenencias;
+    private PertenenciasColor pertenenciasColor;
+    private PertenenciasMarca pertenenciasMarca;
+    private PertenenciasModelo pertenenciasModelo;
+    private PertenenciasTipo pertenenciasTipo;
 
-    public PertenenciaDTO() {
-    }
-
-    public PertenenciaDTO(int idPertenencias, String namePertenencias, LocalDate anioPertenencias, String especificacionesPertenencias, String imagenPertenencias, String codigoPertenencias, int seriePertenencias) {
-        this.idPertenencias = idPertenencias;
-        this.namePertenencias = namePertenencias;
-        AnioPertenencias = anioPertenencias;
-        EspecificacionesPertenencias = especificacionesPertenencias;
-        ImagenPertenencias = imagenPertenencias;
-        CodigoPertenencias = codigoPertenencias;
-        SeriePertenencias = seriePertenencias;
-    }
 
     public int getIdPertenencias() {
         return idPertenencias;
@@ -78,6 +77,38 @@ public class PertenenciaDTO {
 
     public void setSeriePertenencias(int seriePertenencias) {
         SeriePertenencias = seriePertenencias;
+    }
+
+    public PertenenciasColor getPertenenciasColor() {
+        return pertenenciasColor;
+    }
+
+    public void setPertenenciasColor(PertenenciasColor pertenenciasColor) {
+        this.pertenenciasColor = pertenenciasColor;
+    }
+
+    public PertenenciasMarca getPertenenciasMarca() {
+        return pertenenciasMarca;
+    }
+
+    public void setPertenenciasMarca(PertenenciasMarca pertenenciasMarca) {
+        this.pertenenciasMarca = pertenenciasMarca;
+    }
+
+    public PertenenciasModelo getPertenenciasModelo() {
+        return pertenenciasModelo;
+    }
+
+    public void setPertenenciasModelo(PertenenciasModelo pertenenciasModelo) {
+        this.pertenenciasModelo = pertenenciasModelo;
+    }
+
+    public PertenenciasTipo getPertenenciasTipo() {
+        return pertenenciasTipo;
+    }
+
+    public void setPertenenciasTipo(PertenenciasTipo pertenenciasTipo) {
+        this.pertenenciasTipo = pertenenciasTipo;
     }
 }
 

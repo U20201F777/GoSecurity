@@ -14,9 +14,9 @@ public class PertenenciasTipo {
     public PertenenciasTipo() {
     }
 
-    public PertenenciasTipo(int idPerteneneciasTipo, String namePerson) {
+    public PertenenciasTipo(int idPerteneneciasTipo, String namePertenenciasTipo) {
         this.idPerteneneciasTipo = idPerteneneciasTipo;
-        this.namePertenenciasTipo = namePerson;
+        this.namePertenenciasTipo = namePertenenciasTipo;
     }
 
     public int getIdPerteneneciasTipo() {
@@ -31,8 +31,8 @@ public class PertenenciasTipo {
         return namePertenenciasTipo;
     }
 
-    public void setNamePerson(String namePerson) {
-        this.namePertenenciasTipo = namePerson;
+    public void setNamePerson(String namePertenenciasTipo) {
+        this.namePertenenciasTipo = namePertenenciasTipo;
     }
 }
 

@@ -4,14 +4,6 @@ public class PMarcaDTO {
     private int idPertenenciasMarca;
     private String namePertenenciasMarca;
 
-    public PMarcaDTO() {
-    }
-
-    public PMarcaDTO(int idPertenenciasMarca, String namePertenenciasMarca) {
-        this.idPertenenciasMarca = idPertenenciasMarca;
-        this.namePertenenciasMarca = namePertenenciasMarca;
-    }
-
     public int getIdPertenenciasMarca() {
         return idPertenenciasMarca;
     }

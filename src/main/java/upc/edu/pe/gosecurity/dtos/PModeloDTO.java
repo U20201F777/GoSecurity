@@ -4,13 +4,6 @@ public class PModeloDTO {
     private int idPertenenciasModelo;
     private String namePertenenciasModelo;
 
-    public PModeloDTO() {
-    }
-
-    public PModeloDTO(int idPertenenciasModelo, String namePertenenciasModelo) {
-        this.idPertenenciasModelo = idPertenenciasModelo;
-        this.namePertenenciasModelo = namePertenenciasModelo;
-    }
 
     public int getIdPertenenciasModelo() {
         return idPertenenciasModelo;
