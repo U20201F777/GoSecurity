@@ -22,4 +22,14 @@ public class DenunciasComisariaServiceImplement implements IDenunciasComisariaSe
     public List<DenunciasComisaria> LIST() {
         return pR.findAll();
     }
+
+    @Override
+    public void delete(int idDenunciasComisaria) {
+        pR.deleteById(idDenunciasComisaria);
+    }
+
+    @Override
+    public DenunciasComisaria listId(int idDenunciasComisaria) {
+        return pR.findById(idDenunciasComisaria).orElse(new DenunciasComisaria());
+    }
 }

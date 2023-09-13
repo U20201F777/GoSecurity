@@ -29,4 +29,16 @@ public class DenunciasComisariaController {
             return m.map(x,DenunciasComisariaDTO.class);
         }).collect(Collectors.toList());
     }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        pS.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public DenunciasComisariaDTO listaId(@PathVariable("id") Integer id){
+        ModelMapper m= new ModelMapper();
+        DenunciasComisariaDTO dto=m.map(pS.listId(id), DenunciasComisariaDTO.class);
+        return dto;
+    }
+
 }

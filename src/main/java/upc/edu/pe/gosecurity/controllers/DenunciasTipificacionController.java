@@ -29,4 +29,14 @@ public class DenunciasTipificacionController {
             return m.map(x, DenunciasTipificacionDTO.class);
         }).collect(Collectors.toList());
     }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        pS.delete(id);
+    }
+    @GetMapping("/{id}")
+    public DenunciasTipificacionDTO listaId(@PathVariable("id") Integer id){
+        ModelMapper m= new ModelMapper();
+        DenunciasTipificacionDTO dto=m.map(pS.listId(id), DenunciasTipificacionDTO.class);
+        return dto;
+    }
 }
