@@ -1,4 +1,4 @@
-package upc.edu.pe.gosecurity.Controller;
+package upc.edu.pe.gosecurity.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
