@@ -21,4 +21,3 @@ public class PTipoDTO {
         this.namePertenenciasTipo = namePertenenciasTipo;
     }
 }
-

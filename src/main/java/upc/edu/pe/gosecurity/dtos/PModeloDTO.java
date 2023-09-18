@@ -21,4 +21,3 @@ public class PModeloDTO {
         this.namePertenenciasModelo = namePertenenciasModelo;
     }
 }
-

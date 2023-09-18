@@ -12,4 +12,3 @@ public interface PTipoInterfaces {
 
     List<PertenenciasTipo>findByNamePertenenciasTipo (String namePertenenciasTipo);
 }
-

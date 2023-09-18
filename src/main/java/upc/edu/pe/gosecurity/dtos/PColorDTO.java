@@ -20,4 +20,3 @@ public class PColorDTO {
         this.namePertenenciasColor = namePertenenciasColor;
     }
 }
-

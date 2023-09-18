@@ -11,4 +11,3 @@ import java.util.List;
 public interface PMarcaRepository extends JpaRepository <PertenenciasMarca,Integer> {
     List<PertenenciasMarca>findByNamePertenenciasMarca(String namePertenenciasMarca);
 }
-
