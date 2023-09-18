@@ -27,11 +27,11 @@ public class PertenenciasTipo {
         this.idPerteneneciasTipo = idPerteneneciasTipo;
     }
 
-    public String getNamePerson() {
+    public String getNamePertenenciasTipo() {
         return namePertenenciasTipo;
     }
 
-    public void setNamePerson(String namePertenenciasTipo) {
+    public void setNamePertenenciasTipo(String namePertenenciasTipo) {
         this.namePertenenciasTipo = namePertenenciasTipo;
     }
 }
