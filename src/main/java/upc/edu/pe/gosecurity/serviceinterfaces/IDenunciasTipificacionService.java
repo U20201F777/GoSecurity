@@ -1,6 +1,5 @@
 package upc.edu.pe.gosecurity.serviceinterfaces;
 
-import upc.edu.pe.gosecurity.entities.DenunciasComisaria;
 import upc.edu.pe.gosecurity.entities.DenunciasTipificacion;
 
 import java.util.List;
