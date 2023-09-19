@@ -9,6 +9,8 @@ public interface IDenunciasLugarHechoService {
     public List<DenunciasLugarHecho> LIST();
     public void delete(int idDenunciasLugarHecho);
     public DenunciasLugarHecho listId(int idDenunciasLugarHecho);
+    List<DenunciasLugarHecho> findDenunciasLugarHechoBy(String nameDenunciasLugarHechoComisaria);
+
 
 
 }

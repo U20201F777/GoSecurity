@@ -9,6 +9,8 @@ public interface IDenunciasTipificacionService {
     public List<DenunciasTipificacion> LIST();
     public void delete(int idDenunciasTipificacion);
     public DenunciasTipificacion listId(int idDenunciasTipificacion);
+    List<DenunciasTipificacion> findDenunciasTipificacionBy(String nameDenunciasTipificacion);
+
 
 
 }

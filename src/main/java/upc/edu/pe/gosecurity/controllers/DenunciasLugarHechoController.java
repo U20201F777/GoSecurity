@@ -40,4 +40,17 @@ public class DenunciasLugarHechoController {
         DenunciasLugarHechoDTO dto=m.map(pS.listId(id), DenunciasLugarHechoDTO.class);
         return dto;
     }
+    @PostMapping("/buscar")
+    public List<DenunciasLugarHechoDTO>buscar(@RequestBody String name){
+        return pS.findDenunciasLugarHechoBy(name).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, DenunciasLugarHechoDTO.class);
+        }).collect(Collectors.toList());
+    }
+    @PutMapping
+    public void Modificar(@RequestBody DenunciasLugarHechoDTO dto){
+        ModelMapper m = new ModelMapper();
+        DenunciasLugarHecho p=m.map(dto,DenunciasLugarHecho.class);
+        pS.insert(p);
+    }
 }

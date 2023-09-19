@@ -33,4 +33,9 @@ public class DenunciasTipificacionServiceImplement implements IDenunciasTipifica
     public DenunciasTipificacion listId(int idDenunciasTipificacion) {
         return pR.findById(idDenunciasTipificacion).orElse(new DenunciasTipificacion());
     }
+
+    @Override
+    public List<DenunciasTipificacion> findDenunciasTipificacionBy(String nameDenunciasTipificacion) {
+        return pR.findDenunciasTipificacionBy(nameDenunciasTipificacion);
+    }
 }

@@ -4,7 +4,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import upc.edu.pe.gosecurity.dtos.DenunciasDTO;
+import upc.edu.pe.gosecurity.dtos.DenunciasLugarHechoDTO;
 import upc.edu.pe.gosecurity.entities.Denuncias;
+import upc.edu.pe.gosecurity.entities.DenunciasLugarHecho;
 import upc.edu.pe.gosecurity.serviceinterfaces.IDenunciasService;
 
 import java.util.List;
@@ -38,4 +40,19 @@ public class DenunciasController {
         DenunciasDTO dto=m.map(pS.listId(id), DenunciasDTO.class);
         return dto;
     }
+    @PostMapping("/buscar")
+    public List<DenunciasDTO>buscar(@RequestBody String name){
+        return pS.findDenunciasBy(name).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, DenunciasDTO.class);
+        }).collect(Collectors.toList());
+    }
+    @PutMapping
+    public void Modificar(@RequestBody DenunciasDTO dto){
+        ModelMapper m = new ModelMapper();
+        Denuncias p=m.map(dto,Denuncias.class);
+        pS.insert(p);
+    }
+
+
 }
