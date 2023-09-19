@@ -1,5 +1,6 @@
 package upc.edu.pe.gosecurity.serviceinterfaces;
 
+import upc.edu.pe.gosecurity.entities.Denuncias;
 import upc.edu.pe.gosecurity.entities.DenunciasLugarHecho;
 
 import java.util.List;
@@ -9,8 +10,6 @@ public interface IDenunciasLugarHechoService {
     public List<DenunciasLugarHecho> LIST();
     public void delete(int idDenunciasLugarHecho);
     public DenunciasLugarHecho listId(int idDenunciasLugarHecho);
-    List<DenunciasLugarHecho> findDenunciasLugarHechoBy(String nameDenunciasLugarHechoComisaria);
-
-
+    List<DenunciasLugarHecho> findByNameDenunciasLugarHecho(String nameDenunciasLugarHechoComisaria);
 
 }

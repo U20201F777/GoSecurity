@@ -34,8 +34,8 @@ public class DenunciasLugarHechoServiceImplement implements IDenunciasLugarHecho
     }
 
     @Override
-    public List<DenunciasLugarHecho> findDenunciasLugarHechoBy(String nameDenunciasLugarHechoComisaria) {
-        return pR.findDenunciasLugarHechoBy(nameDenunciasLugarHechoComisaria);
+    public List<DenunciasLugarHecho> findByNameDenunciasLugarHecho(String nameDenunciasLugarHechoComisaria) {
+        return pR.findByNameDenunciasLugarHecho(nameDenunciasLugarHechoComisaria);
     }
 
 

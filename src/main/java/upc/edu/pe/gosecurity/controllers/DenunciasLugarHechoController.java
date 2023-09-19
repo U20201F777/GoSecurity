@@ -42,7 +42,7 @@ public class DenunciasLugarHechoController {
     }
     @PostMapping("/buscar")
     public List<DenunciasLugarHechoDTO>buscar(@RequestBody String name){
-        return pS.findDenunciasLugarHechoBy(name).stream().map(x->{
+        return pS.findByNameDenunciasLugarHecho(name).stream().map(x->{
             ModelMapper m=new ModelMapper();
             return m.map(x, DenunciasLugarHechoDTO.class);
         }).collect(Collectors.toList());

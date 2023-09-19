@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface IDenunciasTipificacionRepository extends JpaRepository<DenunciasTipificacion,Integer> {
-    List<DenunciasTipificacion> findDenunciasTipificacionBy(String nameDenunciasTipificacion);
+    List<DenunciasTipificacion> findByNameDenunciasTipificacion(String nameDenunciasTipificacion);
 
 }

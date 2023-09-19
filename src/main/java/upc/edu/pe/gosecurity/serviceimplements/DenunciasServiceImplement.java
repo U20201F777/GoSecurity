@@ -34,8 +34,8 @@ public class DenunciasServiceImplement implements IDenunciasService {
     }
 
     @Override
-    public List<Denuncias> findDenunciasBy(String nameDenuncias) {
-        return pR.findDenunciasBy(nameDenuncias);
+    public List<Denuncias> findByNameDenuncias(String nameDenuncias) {
+        return pR.findByNameDenuncias(nameDenuncias);
     }
 
 }

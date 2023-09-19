@@ -9,7 +9,7 @@ public interface IDenunciasService {
     public List<Denuncias> LIST();
     public void delete(int idDenuncias);
     public Denuncias listId(int idDenuncias);
-    List<Denuncias> findDenunciasBy(String nameDenuncias);
+    List<Denuncias> findByNameDenuncias (String nameDenuncias);
 
 
 

@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface IDenunciasRepository extends JpaRepository<Denuncias,Integer> {
-    List<Denuncias> findDenunciasBy(String nameDenuncias);
+    List<Denuncias> findByNameDenuncias (String nameDenuncias);
 }

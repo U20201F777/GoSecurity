@@ -3,9 +3,7 @@ package upc.edu.pe.gosecurity.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import upc.edu.pe.gosecurity.dtos.DenunciasLugarHechoDTO;
 import upc.edu.pe.gosecurity.dtos.DenunciasTipificacionDTO;
-import upc.edu.pe.gosecurity.entities.DenunciasLugarHecho;
 import upc.edu.pe.gosecurity.entities.DenunciasTipificacion;
 import upc.edu.pe.gosecurity.serviceinterfaces.IDenunciasTipificacionService;
 
@@ -43,7 +41,7 @@ public class DenunciasTipificacionController {
     }
     @PostMapping("/buscar")
     public List<DenunciasTipificacionDTO>buscar(@RequestBody String name){
-        return pS.findDenunciasTipificacionBy(name).stream().map(x->{
+        return pS.findByNameDenunciasTipificacion(name).stream().map(x->{
             ModelMapper m=new ModelMapper();
             return m.map(x, DenunciasTipificacionDTO.class);
         }).collect(Collectors.toList());

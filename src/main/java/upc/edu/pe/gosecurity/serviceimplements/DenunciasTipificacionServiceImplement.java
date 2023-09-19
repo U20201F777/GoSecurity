@@ -2,7 +2,6 @@ package upc.edu.pe.gosecurity.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import upc.edu.pe.gosecurity.entities.Denuncias;
 import upc.edu.pe.gosecurity.entities.DenunciasTipificacion;
 import upc.edu.pe.gosecurity.repositories.IDenunciasTipificacionRepository;
 import upc.edu.pe.gosecurity.serviceinterfaces.IDenunciasTipificacionService;
@@ -35,7 +34,8 @@ public class DenunciasTipificacionServiceImplement implements IDenunciasTipifica
     }
 
     @Override
-    public List<DenunciasTipificacion> findDenunciasTipificacionBy(String nameDenunciasTipificacion) {
-        return pR.findDenunciasTipificacionBy(nameDenunciasTipificacion);
+    public List<DenunciasTipificacion> findByNameDenunciasTipificacion(String nameDenunciasTipificacion) {
+        return pR.findByNameDenunciasTipificacion(nameDenunciasTipificacion);
     }
+
 }
