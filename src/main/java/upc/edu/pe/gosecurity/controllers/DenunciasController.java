@@ -28,7 +28,7 @@ public class DenunciasController {
             return m.map(x,DenunciasDTO.class);
         }).collect(Collectors.toList());
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}") 
     public void eliminar(@PathVariable("id") Integer id){
         pS.delete(id);
     }
